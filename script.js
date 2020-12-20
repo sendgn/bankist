@@ -97,3 +97,6 @@ const createUsernames = function (accs) {
 };
 
 createUsernames(accounts);
+
+// TODO: implement login
+// Choose from the accounts, test PINs and load data for the logged in account
