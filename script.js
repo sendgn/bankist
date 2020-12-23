@@ -164,3 +164,5 @@ btnTransfer.addEventListener("click", function (e) {
     updateUI(currentAccount);
   }
 });
+
+// TODO: Implement clock timer
