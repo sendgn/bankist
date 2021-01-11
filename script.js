@@ -167,6 +167,26 @@ btnTransfer.addEventListener("click", function (e) {
   }
 });
 
+// The loan is only granted if there's any deposit > 10% of request
+btnLoan.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+
+  if (
+    amount > 0 &&
+    currentAccount.movements.some((mov) => mov >= amount * 0.1)
+  ) {
+    // Add movement
+    currentAccount.movements.push(amount);
+
+    // Upadate UI
+    updateUI(currentAccount);
+
+    inputLoanAmount.value = "";
+  }
+});
+
 btnClose.addEventListener("click", function (e) {
   e.preventDefault();
 
